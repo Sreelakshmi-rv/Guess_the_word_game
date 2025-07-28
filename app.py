@@ -3,7 +3,16 @@ import random
 
 st.set_page_config(page_title="Guess the Word!", page_icon="🤔")
 st.title("🤔 Guess the Word!")
-
+#game instruction
+with st.expander("How to Play"):
+    st.info(
+        """
+        - A secret word has been chosen, and you have 10 attempts to guess it.
+        - **Guess a single letter:** Enter one letter to see if it's in the word.
+        - **Guess the full word:** If you think you know the answer, type the full word to win instantly!
+        - A wrong guess (either a letter or the full word) will cost you one attempt.
+        """
+    )
 # Initialize the game state from the word bank
 if 'word' not in st.session_state:
     word_bank = [
